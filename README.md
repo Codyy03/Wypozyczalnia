@@ -1,4 +1,4 @@
-# Wypozyczalnia
+# Wypożyczalnia
 Rozpatrzmy bazę danych stworzoną dla wypożyczalni samochodów, która przechowuje: markę, model, pojemność silnika, moc silnika, rejestracja, kolor, rok produkcji, cenę za dzień wypożyczenia. O klientach: imię, nazwisko, numer PESEL, telefon, email. O pracownikach: imię, nazwisko, wynagrodzenie miesięczne, data zatrudnienia. Każdy pracownik ma przydzielony pojazd, którym się opiekuje, pilnując daty zwrotu. Baza powinna przechowywać aktualnie wypożyczone pojazdy i całą historię wypożyczeń. W momencie wypożyczenia znana jest data zwrotu. Baza powinna uwzględniać możliwość wypożyczenia wielu samochodów przez jednego klienta. Firma również może rezerwować wybrane pojazdy przez klientów. 
 
 1.	Modele – spis wszystkich modeli posiadanych przez wypożyczalnię.
