@@ -18,4 +18,5 @@ Atrybuty: ID_wypożyczenia, data wypożyczenia, ID_klienta, data zwrotu
 
 6. Rezerwacje – Przyszłościowe zamówienia.
 Atrybuty: ID_rezerwacji, ID_klienta, Data_rozpoczęcia, Data_zakończenia
-![image](https://github.com/user-attachments/assets/ef31c9c6-9cc0-426e-83cc-7e84f12dfba4)
+![image](https://github.com/user-attachments/assets/077b50e0-6b52-44a8-8a92-bdda170805a1)
+
