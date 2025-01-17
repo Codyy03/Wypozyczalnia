@@ -1,0 +1,25 @@
+﻿<Window x:Class="GUI.AccessSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="AccessSelection" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid Style="{StaticResource GridBackground}">
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Height="278">
+            <TextBlock   Text="Zaloguj się" VerticalAlignment="Top" Width="460" FontSize="35" TextAlignment="Center" IsEnabled="False" Margin="0,0,0,50" Foreground="White"/>
+            <TextBlock  TextWrapping="Wrap" Text="Hasło:" Style="{StaticResource registrationTexts}"/>
+            <PasswordBox x:Name="loginPasswordInput"  Width="146" Height="23" Margin="0,0,0,30"/>
+            <Button x:Name="checkPassword" Content="Zaloguj" Style="{StaticResource registrationButtons}"  Width="158" Height="39" FontSize="20" Click="checkPassword_Click" Margin="0,0,0,30"/>
+        </WrapPanel>
+
+
+        <Button x:Name="changeToCustomerLogin" Style="{StaticResource registrationButtons}" Content="Zaloguj"  Height="24" Width="96" Click="changeToCustomerLogin_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,38,38,0"/>
+        <TextBlock  Text="Logowanie klienta" Style="{StaticResource registrationTexts}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="152" Margin="0,9,10,15"/>
+
+
+    </Grid>
+</Window>

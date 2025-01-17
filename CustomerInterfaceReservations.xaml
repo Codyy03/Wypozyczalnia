@@ -1,0 +1,56 @@
+﻿<Window x:Class="GUI.CustomerInterfaceReservations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="CustomerInterfaceReservations" Height="525" Width="1074"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid Style="{StaticResource GridBackground}">
+        <WrapPanel Height="478" Margin="198,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Border x:Name="firstCar" Style="{StaticResource customBorder}" Width="476" Height="330">
+                <StackPanel>
+                    <TextBlock x:Name="carName" Text="FORD FOCUS" FontSize="23" Style="{StaticResource customTextBlock}" Width="473" Margin="0" FontWeight="Bold"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel Style="{StaticResource customStackPanel}">
+                            <TextBlock x:Name="engineCapacity" Text="Pojemność silnika: 2000" Style="{StaticResource customTextBlock}" Width="178"/>
+                            <TextBlock x:Name="productionDate" Text="Data produkcji: 2017-04-15" Style="{StaticResource customTextBlock}" Width="193"/>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource customStackPanel}">
+                            <TextBlock x:Name="carMileage" Text="Przebieg: 60000" Style="{StaticResource customTextBlock}"/>
+                            <TextBlock x:Name="enginePower" Text="Moc silnika: 150" Style="{StaticResource customTextBlock}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock x:Name="registraction" Text="Rejestracja: wdsf3" Style="{StaticResource customTextBlock}" Width="140"/>
+                        <TextBlock x:Name="carColor" Text="Kolor: czerwony" Style="{StaticResource customTextBlock}"/>
+                    </StackPanel>
+                    <TextBlock x:Name="employee" Text="Opiekun: Adam nowak" Style="{StaticResource customTextBlock}" Width="412"/>
+                    <TextBlock x:Name="price" Text="Cena:" Style="{StaticResource customTextBlock}" Foreground="#FF27B324"/>
+                    <CheckBox x:Name="addToRent" Content="Dodaj rezerwacji" HorizontalAlignment="Center" Margin="0,10,0,15" Checked="addToRent_Checked" Unchecked="addToRent_Unchecked" Foreground="White"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+        <ComboBox x:Name="carsOptions" Style="{StaticResource customComboBox}" VerticalAlignment="Top" SelectionChanged="carsOptions_SelectionChanged"/>
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="726,0,0,0" Width="233">
+            <TextBlock Text="Zamówienia:" FontSize="15" TextAlignment="Center" FontWeight="Bold" Foreground="White"/>
+            <ListBox x:Name="carsToRentListBox" Style="{StaticResource customListBox}" MouseDoubleClick="carsToRentListBox_MouseDoubleClick">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Item2}" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel>
+                <TextBlock Text="Data Rozpoczęcia:" FontSize="15" TextAlignment="Center"  Foreground="White"/>
+                <DatePicker x:Name="startDatePicker" Style="{StaticResource customDatePicker}" Loaded="startDatePicker_Loaded" SelectedDateChanged="startDatePicker_SelectedDateChanged"/>
+                <TextBlock Text="Data Zakończenia:" FontSize="15" TextAlignment="Center" Margin="0,10,0,0" Foreground="White"/>
+                <DatePicker x:Name="endDatePicker" Style="{StaticResource customDatePicker}"/>
+            </StackPanel>
+            <Button Style="{StaticResource registrationButtons}" x:Name="orderCarsButton" Content="Zarezerwuj"  Click="orderCarsButton_Click" Margin="0,20,0,0" Width="158"/>
+        </WrapPanel>
+        <Button Content="Wyloguj" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="15,0,0,15" Style="{StaticResource customButton}" Click="Button_Click" Height="34"/>
+    </Grid>
+</Window>

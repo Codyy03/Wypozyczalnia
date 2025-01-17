@@ -1,0 +1,34 @@
+﻿<Window x:Class="GUI.CustomerInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="CustomerInfo" Height="477" Width="1281"
+        WindowStartupLocation="CenterScreen"
+         ResizeMode="NoResize">
+    <Grid Style="{StaticResource GridBackground}">
+        
+
+        <Border HorizontalAlignment="Right" BorderThickness="2"  BorderBrush="White" OpacityMask="#FFECB5B5" >
+
+            <StackPanel HorizontalAlignment="Right"  Width="213" >
+                <TextBlock  TextWrapping="Wrap" Text="Dane klienta" Foreground="White" FontSize="30" Width="209" TextAlignment="Center" Margin="0,10,0,0"  />
+                <TextBlock x:Name="userName"  TextWrapping="Wrap" Text="Jan kowalski" Foreground="White" HorizontalAlignment="Right" FontSize="20"  Width="211" Margin="0,10,0,0" TextAlignment="Center" />
+                <TextBlock x:Name="peselText"  TextWrapping="Wrap" Text="Pesel: 1111111111111" Foreground="White" HorizontalAlignment="Right" FontSize="20"  Width="212" Margin="0,10,0,0" TextAlignment="Center" />
+                <TextBlock x:Name="email"  TextWrapping="Wrap" Text="Email: " Foreground="White" FontSize="20"  Width="208" Margin="0,10,0,0" TextAlignment="Center" />
+                <TextBlock x:Name="phon"  TextWrapping="Wrap" Text="Telefon: 234132435 " Foreground="White" FontSize="20"  Width="208" Margin="0,10,0,0" TextAlignment="Center" />
+                <Button Style="{StaticResource registrationButtons}"  x:Name="logout" Content="Powrót" Margin="0,15,0,0" Width="140" Click="logout_Click"  />
+
+            </StackPanel>
+        </Border>
+        <StackPanel Margin="0,0,217,0">
+            <TextBlock  TextWrapping="Wrap" Text="Historia użytkownika" Foreground="White" HorizontalAlignment="Center" FontSize="20"  Width="622" VerticalAlignment="Center" TextAlignment="Center" Margin="0,10,0,10"/>
+            <DataGrid x:Name="historyGrid"  Style="{StaticResource modernDataGrid}" HorizontalAlignment="Stretch" LoadingRow="historyGrid_LoadingRow" FontSize="15"/>
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="GUI.SelectingCustomerOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="SelectingCustomerOptions" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+         ResizeMode="NoResize">
+    
+    <Grid Style="{StaticResource GridBackground}">
+
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="800"  >
+            <Button Content="Wypożycz samochód" Style="{StaticResource SelectTableButton}" Width="200" Click="Button_Click" Margin="180,50,50,0"/>
+            <Button Content="Zarezerwuj samochód"  Style="{StaticResource SelectTableButton}" VerticalAlignment="Top" Width="200" Click="Button_Click_1" Margin="0,50,0,0" />
+          
+        </WrapPanel>
+        <Button x:Name="clientInfoButton" Content="Informacje o koncie"  Style="{StaticResource SelectTableButton}" VerticalAlignment="Top" Width="200"  Margin="0,50,0,0" Click="clientInfoButton_Click" />
+        <Button Content="Wyloguj"  Style="{StaticResource SelectTableButton}" VerticalAlignment="Bottom" Width="191"  HorizontalAlignment="Left" Height="36" Margin="10,0,0,10" Click="Button_Click_2" />
+    </Grid>
+</Window>

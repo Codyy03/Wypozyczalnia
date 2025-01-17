@@ -1,0 +1,42 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="609" Width="1028"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <ScrollViewer x:Name="scroll" VerticalScrollBarVisibility="Auto">
+            <WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <DataGrid Style="{StaticResource modernDataGrid}" x:Name="modelTableView" CellEditEnding="modelTableView_CellEditEnding" Width="828" RenderTransformOrigin="0.5,0" BeginningEdit="modelTableView_BeginningEdit"   />
+                <Button x:Name="addNewRecordButton" Content="+" Margin="5,5,0,0" Width="50" Height="27" Click="addNewRecordButton_Click" />
+                <Button x:Name="deleteNewRecordButton" Content="Anuluj" Margin="5,5,0,0" Width="50" Height="27" Click="deleteNewRecordButton_Click" Visibility="Hidden"  />
+                <Button x:Name="saveNewRecordButton" Content="Zapisz" Margin="5,5,0,0" Width="100" Height="27" Click="saveNewRecordButton_Click" Visibility="Hidden" />
+                <Button x:Name="ReturnToSelectTableButton" Content="Powrót"  Width="112" Height="27" FontSize="18" Click="ReturnToSelectTableButton_Click" Margin="10,10,10,10" RenderTransformOrigin="0,0.5" HorizontalAlignment="Left" />
+                <StackPanel x:Name="userHistory" Visibility="Hidden">
+                    <Button x:Name="allClientsRevenue" Content="Przychód z klientów"  Width="260" Height="27" FontSize="18" RenderTransformOrigin="0,0.5" HorizontalAlignment="Center"  Margin="0,5,0,0" Click="allClientsRevenue_Click"  />
+                    <Button x:Name="showRevenueDiagram" Content="Pokaż wykres przychodów"  Width="260" Height="27" FontSize="18" RenderTransformOrigin="0,0.5" HorizontalAlignment="Center"  Margin="0,5,0,15" Click="showRevenueDiagram_Click" />
+                    <TextBlock Text="Pesel" HorizontalAlignment="Center" Width="45" FontSize="15" TextAlignment="Center" Margin="0,0,0,5"/>
+                    <TextBox x:Name="peselInput" MaxLength="11" VerticalAlignment="Center" HorizontalAlignment="Center" Width="158" PreviewKeyDown="peselInput_PreviewKeyDown" PreviewTextInput="peselInput_PreviewTextInput" />
+                    <Button x:Name="showUserHistory" Content="Historia wypożyczeń klienta"  Width="260" Height="27" FontSize="18" RenderTransformOrigin="0,0.5" HorizontalAlignment="Center"  Margin="0,5,0,0" Click="showUserHistory_Click" />
+                    <Button x:Name="clientRevenue" Content="Dochód z klienta"  Width="260" Height="27" FontSize="18" RenderTransformOrigin="0,0.5" HorizontalAlignment="Center"  Margin="0,5,0,0" Click="clientRevenue_Click"  />
+                </StackPanel>
+                <StackPanel x:Name="carsRenevue" Visibility="Hidden">
+                    <Button x:Name="showDiagram" Content="Pokaż wykres przychodów"  Width="260" Height="27" FontSize="18" RenderTransformOrigin="0,0.5" HorizontalAlignment="Center" Click="showDiagram_Click" />
+                    <Button x:Name="showCAllarsRenevueData" Content="Przychód z pojazdów"  Width="260" Height="27" FontSize="18" RenderTransformOrigin="0,0.5" HorizontalAlignment="Center"  Margin="0,5,0,0" Click="showCAllarsRenevueData_Click"   />
+                    <TextBlock Text="Rejestracja:" HorizontalAlignment="Center" Width="165" FontSize="15" TextAlignment="Center" Margin="0,15,0,5"/>
+                    <TextBox x:Name="registractionInput" MaxLength="12" VerticalAlignment="Center" HorizontalAlignment="Center" Width="158"  />
+                    <Button x:Name="showCarsRenevueData" Content="Przychód z jednego pojazdu"  Width="260" Height="27" FontSize="18" RenderTransformOrigin="0,0.5" HorizontalAlignment="Center"  Margin="0,5,0,0" Click="showCarsRenevueData_Click"  />
+                </StackPanel>
+                
+                <TextBlock x:Name="notification" TextWrapping="Wrap" Text="Jesteś w trybie dodawania. Zmodyfikowane rekordy nie zostaną zapisane!" FontSize="17" Foreground="Red" FontWeight="Bold" TextAlignment="Center" Visibility="Hidden"/>
+            </WrapPanel>
+        </ScrollViewer>
+
+
+    </Grid>
+</Window>
